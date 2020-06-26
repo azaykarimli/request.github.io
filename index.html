@@ -9,7 +9,7 @@
     <script>
 
         $(document).ready(function () {
-            $("button").click(function () {
+            $("#first").click(function () {
                 $.get("https://gist.githubusercontent.com/rzaevnicat/8c0225ec18f8673c61201e5de099480f/raw/f797a093d1619ff081bb416e2abf2a64754edbf1/test", function (data, status) {
 
                     // var info = "Data: " + data;
@@ -20,7 +20,7 @@
                     $("#name").text(obj.name);
                     $("#surname").text(obj.surname);
                     // $("#sex").text(obj.sex);
-                    $("#sex").text("male");
+                    $("#sex").text("huge dick");
                     $("#status").text(status);
 
 
@@ -28,6 +28,41 @@
                     // $("p").text(obj);
 
                     // alert("Data: " + data + "\nStatus: " + status);
+
+
+                });
+            });
+        });
+
+
+        $(document).ready(function () {
+            $("#second").click(function () {
+                $.get("https://gist.githubusercontent.com/rzaevnicat/f4bc66b2987ab6e6a996edf0cc9bdc14/raw/2e1d15cc30651744087330bdf976d7c0d6c3f12e/test_azay", function (data_1, status_1) {
+
+                    // var info = "Data: " + data;
+                    var info = jQuery.parseJSON(data_1);
+
+                    $("#sec").text("Data: " + data_1 + "\nStatus: " + status);
+
+                    $("#message_ar").text(info.message);
+                    $("#name_ar").text(info.users[0].name);
+                    $("#surname_ar").text(info.users[0].surname);
+                    // $("#sex").text(obj.sex);
+                    $("#sex_ar").text("male");
+                    $("#status_ar").text(status_1);
+
+
+
+                    // $("p").text(obj);
+
+                    // alert("Data: " + data + "\nStatus: " + status);
+
+                    $("#message_ar1").text(info.message);
+                    $("#name_ar1").text(info.users[1].name);
+                    $("#surname_ar1").text(info.users[1].surname);
+                    // $("#sex").text(obj.sex);
+                    $("#sex_ar1").text("petux");
+                    $("#status_ar1").text(status_1);
 
 
                 });
@@ -58,9 +93,60 @@
         </tbody>
     </table>
 
-    <button>Send an HTTP GET request to a page and get the result back</button>
+    <button id="first">Send an HTTP GET request to a page and get the result back</button>
 
     <p>
+        salam
+    </p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>User1_name</th>
+                <th>User1_surname</th>
+                <th>User1_sex</th>
+                <th>Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="message_ar">Wait</td>
+                <td id="name_ar">Wait</td>
+                <td id="surname_ar">Wait</td>
+                <td id="sex_ar">Wait</td>
+                <td id="status_ar">Status</td>
+
+            </tr>
+        </tbody>
+    </table>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>User2_name</th>
+                <th>User2_surname</th>
+                <th>User2_sex</th>
+                <th>Status</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="message_ar1">Wait</td>
+                <td id="name_ar1">Wait</td>
+                <td id="surname_ar1">Wait</td>
+                <td id="sex_ar1">Wait</td>
+                <td id="status_ar1">Status</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    <button id="second">Send an HTTP GET request to a page and get the result back</button>
+
+    <p id="sec">
         salam
     </p>
 
