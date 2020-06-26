@@ -1,0 +1,69 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table for requested files</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $("button").click(function () {
+                $.get("https://gist.githubusercontent.com/rzaevnicat/8c0225ec18f8673c61201e5de099480f/raw/f797a093d1619ff081bb416e2abf2a64754edbf1/test", function (data, status) {
+
+                    // var info = "Data: " + data;
+                    var obj = jQuery.parseJSON(data);
+                    // $("p").text("Data: " + data + "\nStatus: " + status);
+                    $("p").text("Data: " + obj.name + "\nStatus: " + status);
+                    $("#message").text(obj.message);
+                    $("#name").text(obj.name);
+                    $("#surname").text(obj.surname);
+                    // $("#sex").text(obj.sex);
+                    $("#sex").text("huge dick");
+                    $("#status").text(status);
+
+
+
+                    // $("p").text(obj);
+
+                    // alert("Data: " + data + "\nStatus: " + status);
+
+
+                });
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>Name</th>
+                <th>SurName</th>
+                <th>Sex</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td id="message">Wait</td>
+                <td id="name">Wait</td>
+                <td id="surname">Wait</td>
+                <td id="sex">Wait</td>
+                <td id="status">Status</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <button>Send an HTTP GET request to a page and get the result back</button>
+
+    <p>
+        salam
+    </p>
+
+</body>
+
+</html>
